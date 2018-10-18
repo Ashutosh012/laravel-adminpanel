@@ -1,3 +1,7 @@
+<!-- @php
+$confirmation_url = '/template';
+@endphp -->
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns:v="urn:schemas-microsoft-com:vml">
 
@@ -67,8 +71,30 @@
             margin-right: 25px;
         }
 
-        .content{
-            
+        p.link{
+            text-align: center;
+            font-family: Avenir, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+        .button{   
+                font-family: Avenir, Helvetica, sans-serif;
+                box-sizing: border-box;
+                box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
+                font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                display: inline-grid;
+                width: 180px;
+                min-height: 20px;
+                padding: 10px;
+                margin-bottom: 20px;
+                background-color: #5caad2;
+                border-radius: 3px;
+                letter-spacing: 2px;
+                color: #ffffff;
+                font-size: 15px;
+                line-height: 25px;
+                text-align: center;
+                text-decoration: none;
+                -webkit-text-size-adjust: none;
         }
         /* ----------- responsivity ----------- */
 
@@ -142,14 +168,28 @@
             <tr>
                 <td align="center">
                     <table border="0" align="center" width="590" cellpadding="0" cellspacing="0" class="container590">
+
+
+                        <tr>
+                            <td align="center">
+                                <table border="0" width="100%" align="center" cellpadding="10" cellspacing="0" bgcolor="808080">
+                                    <tr>
+                                        <td align="center" height="2" style="font-size: 30px; line-height: 2px;">&nbsp;
+                                            <div style="line-height: 35px">
+                                                <b> {{ app_name() }} </b>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
                         <tr>
                             <td align="center" style="color: #343434; font-size: 24px; font-family: Quicksand, Calibri, sans-serif; font-weight:700;letter-spacing: 3px; line-height: 35px;"
                                 class="main-header">
                                 <!-- section text ======-->
 
-                                <div style="line-height: 35px">
-                                    {{ app_name() }}
-                                </div>
+                                
                             </td>
                         </tr>
 
@@ -157,15 +197,6 @@
                             <td height="10" style="font-size: 10px; line-height: 10px;">&nbsp;</td>
                         </tr>
 
-                        <tr>
-                            <td align="center">
-                                <table border="0" width="40" align="center" cellpadding="0" cellspacing="0" bgcolor="eeeeee">
-                                    <tr>
-                                        <td height="2" style="font-size: 2px; line-height: 2px;">&nbsp;</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
 
                         <tr>
                             <td height="20" style="font-size: 20px; line-height: 20px;">&nbsp;</td>
@@ -186,27 +217,10 @@
                                                 <p style="line-height: 24px; margin-bottom:20px;">
                                                     Click here to confirm your account:
                                                 </p>
-                                                <table border="0" align="center" width="180" cellpadding="0" cellspacing="0" bgcolor="5caad2" style="margin-bottom:20px;">
 
-                                                    <tr>
-                                                        <td height="10" style="font-size: 10px; line-height: 10px;">&nbsp;</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td align="center" style="color: #ffffff; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">
-                                                            <!-- main section button -->
-
-                                                            <div style="line-height: 22px;">
-                                                                <a href="{{ $confirmation_url }}" style="color: #ffffff; text-decoration: none;">Confirm Account</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td height="10" style="font-size: 10px; line-height: 10px;">&nbsp;</td>
-                                                    </tr>
-
-                                                </table>
+                                                <p class="link">
+                                                    <a href="{{ $confirmation_url }}" style="color: #ffffff; text-decoration: none;" class="button">Confirm Account</a>
+                                                </p>
 
                                                 <p style="line-height: 24px; margin-bottom:20px;">
                                                     Thank you for using our application!
@@ -225,7 +239,7 @@
 
                                                 <p style="line-height: 24px; margin-bottom:20px;">
                                                     <a href="{{ $confirmation_url }}" target="_blank" class="lap">
-                                                        {{ $confirmation_url}}
+                                                        {{ $confirmation_url }}
                                                     </a>
                                                 </p>
 
